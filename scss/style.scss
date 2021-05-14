@@ -1,4 +1,4 @@
-@import 'normalize.scss';
+@import '_normalize.scss';
 
 // mixins 
 
@@ -205,14 +205,14 @@ h1, h2, h3, h4, h5, h6 {
 
     &__wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        margin-top: 80px;
     }
 }
 
 .mixer-card {
     display: flex;
     flex-direction: column;
-    margin-top: 80px;
     margin-left: 60px;
     max-width: 210px;
     width: 100%;
@@ -278,6 +278,7 @@ h1, h2, h3, h4, h5, h6 {
         }
         &:hover,
         &:focus {
+            color: $wight-txt;
             background-color: $main-color;
             box-shadow: 0px 4px 4px $main-color;
         }
@@ -288,7 +289,20 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     &__card {
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    &__card-inner {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 15px;
         width: 150px;
+        max-height: 125px;
+        height: 100%;
         border-radius: 10px;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         background-color: #FFF;
@@ -297,6 +311,8 @@ h1, h2, h3, h4, h5, h6 {
     &__card-img {
         display: block;
         margin: 0 auto;
+        max-height: 75px;
+        height: 100%;
     }
 
     &__wrapper {
@@ -322,6 +338,10 @@ h1, h2, h3, h4, h5, h6 {
 
     &__volume-status {
     }
+}
+
+.selected-card {
+    height: 100%;
 }
 
 
