@@ -717,4 +717,132 @@ h1, h2, h3, h4, h5, h6 {
 .selected-card {
   height: 100%;
 }
+
+.next-catalog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 100px;
+  margin-bottom: 45px;
+}
+
+.next-catalog__text {
+  margin-right: 10px;
+}
+
+.catalog {
+  margin-bottom: 40px;
+}
+
+.catalog__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+.catalog__img {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
+  width: 100%;
+}
+
+.block-menu {
+  background-color: #F5F4F2;
+}
+
+.block-menu__title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 22px;
+  color: #FE9A60;
+  margin-bottom: 8px;
+}
+
+.block-menu__subtitle {
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.block-menu__desc {
+  text-align: center;
+  font-weight: 300;
+  font-size: 18px;
+  margin-bottom: 40px;
+}
+
+.menu-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu-cards__item {
+  max-width: 280px;
+  width: 100%;
+}
+
+.menu-cards__item:hover {
+  background-color: #F5F5F5;
+  -webkit-box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.menu-cards__desc-wrapper {
+  padding: 24px;
+}
+
+.menu-cards__img {
+  width: 100%;
+  -webkit-box-pack: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+.menu-cards__title {
+  margin-bottom: 8px;
+  font-weight: 600;
+  font-size: 22px;
+  color: #FE9A60;
+}
+
+.menu-cards__subtitle {
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.menu-cards__info-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 18px;
+}
+
+.menu-cards__price {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.menu-cards__add-button {
+  cursor: pointer;
+}
 /*# sourceMappingURL=style.css.map */
