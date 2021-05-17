@@ -7,7 +7,6 @@
 $main-txt: #000;
 $wight-txt: #FFF;
 $main-color: #FE9A60;
-
 $gray-bg: #F5F4F2;
 
 
@@ -360,7 +359,6 @@ h1, h2, h3, h4, h5, h6 {
 // catalog
 
 .catalog {
-    margin-bottom: 40px;
 
     &__inner {
         display: flex;
@@ -378,35 +376,42 @@ h1, h2, h3, h4, h5, h6 {
 
 // block-menu
 
+.block-title {
+    text-align: center;
+    font-weight: 700;
+    font-size: 22px;
+    color: $main-color;
+    margin-bottom: 8px;
+}
+
+.block-subtitle {
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: 4px;
+}
+
+.block-desc {
+    text-align: center;
+    font-weight: 300;
+    font-size: 18px;
+}
+
 .block-menu {
     background-color: $gray-bg;
+    padding: 40px 0;
 
-    &__title {
-        text-align: center;
-        font-weight: 700;
-        font-size: 22px;
-        color: $main-color;
-        margin-bottom: 8px;
-    }
-
-    &__subtitle {
-        text-align: center;
-        font-weight: 600;
-        font-size: 24px;
-        margin-bottom: 4px;
-    }
-
-    &__desc {
-        text-align: center;
-        font-weight: 300;
-        font-size: 18px;
-        margin-bottom: 40px;
+    .order-button {
+        display: block;
+        margin: 0 auto;
     }
 }
 
 .menu-cards {
     display: flex;
     justify-content: space-between;
+    margin-top: 40px;
+    margin-bottom: 70px;
 
     &__item {
         max-width: 280px;
@@ -458,3 +463,169 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // /block-menu
+
+// contact-us
+
+.contact-us {
+    
+    background: 
+    url(../img/Frame_4.png) left no-repeat,
+    url(../img/bgmap.png) right no-repeat;
+    background-size: 35%, cover;
+
+    &__wrapper{
+        display: flex;
+        padding: 56px 0 94px 0;
+    }
+
+    &__contacts {
+        display: flex;
+        flex-direction: column;
+        color: $wight-txt;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        font-weight: 400;
+        font-size: 24px;
+    }
+
+    &__adress {
+        margin-bottom: 20px;
+        max-width: 180px;
+        width: 100%;
+        font-weight: 400;
+        font-size: 16px;
+
+        &::before {
+            content: "";
+            background-image: url(../img/maps-and-flags.png);
+            background-size: cover;
+            position: relative;
+            float: left;
+            margin-right: 8px;
+            height: 15px;
+            width: 15px;
+        }
+    }
+
+    &__phone {
+        margin-bottom: 20px;
+        font-weight: 400;
+        font-size: 16px;
+
+        &::before {
+            content: "";
+            background-image: url(../img/phone-call.png);
+            background-size: cover;
+            position: relative;
+            float: left;
+            margin-right: 8px;
+            height: 15px;
+            width: 15px;
+        }
+    }
+
+    &__inst {
+        font-weight: 400;
+        font-size: 16px;
+
+        &::before {
+            content: "";
+            background-image: url(../img/instagramm.png);
+            background-size: cover;
+            position: relative;
+            float: left;
+            margin-right: 8px;
+            height: 15px;
+            width: 15px;
+        }
+    }
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 280px;
+    width: 100%;
+    padding: 25px;
+    margin-left: 120px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    &__title {
+        margin-bottom: 25px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+        text-transform: uppercase;
+    }
+
+    &__input {
+        padding: 7px;
+        margin-bottom: 7px;
+        border: none;
+        border-bottom: 1px solid #B4B4B4;
+    }
+
+    .order-button {
+        margin-top: 58px;
+    }
+}
+
+// /contact-us
+
+// about
+
+.about {
+    padding: 40px 0 60px 0;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 87px;
+    }
+
+    &__item {
+        display: flex;
+        max-width: 280px;
+    }
+
+    &__info {
+
+    }
+
+    &__number {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-right: 5px;
+        font-weight: 500;
+        font-size: 96px;
+        line-height: 75px;
+        font-family: 'Rubik', sans-serif;
+        color: $main-color;
+    }
+
+    &__img {
+        align-self: center;
+        max-height: 60px;
+        margin-bottom: 8px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+    }
+
+    &__text {
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 19px;
+    }
+}
+
+// /about

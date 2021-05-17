@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +43,7 @@
                     <img class="promo-product__discount" src="img/price.png" alt="discount">
                     <input type="submit" value="Попробовать" class="promo-product__button">
                 </div>
-                <img class="promo-product__img" src="img/fackingsok.png" alt="promo-stakan">
+                <img class="promo-product__img" src="img/sok.png" alt="promo-stakan">
             </div>
         </div>
     </header>
@@ -56,7 +57,7 @@
             <div class="mixer__wrapper">
                 <div class="mixer-card">
                     <div class="mixer-card__wrapper">
-                        <img src="img/fackingsok.png" alt="shaker" class="mixer-card__img">
+                        <img src="img/sok.png" alt="shaker" class="mixer-card__img">
                         <div class="mixer-card__desc">Апельсин (0.25л)</div>
                     </div>
                     <p class="mixer-card__price">Итого: 400Руб</p>
@@ -134,10 +135,10 @@
     <!-- menu -->
     <section class="block-menu">
         <div class="container">
-            <h3 class="block-menu__title">Меню</h3>
-            <div class="block-menu__subtitle">Ассортимент</div>
-            <p class="block-menu__desc">Вы можете выбрать готовый продукт или создать свой</p>
-            
+            <h3 class="block-title">Меню</h3>
+            <div class="block-subtitle">Ассортимент</div>
+            <p class="block-desc">Вы можете выбрать готовый продукт или создать свой</p>
+
             <div class="menu-cards">
                 <div class="menu-cards__item">
                     <img src="img/Green_Juice_Bottle_I16_2k 1.png" alt="АХАХАХ ещё сок" class="menu-cards__img">
@@ -184,34 +185,93 @@
                     </div>
                 </div>
             </div>
+            <input type="submit" value="Больше" class="order-button">
         </div>
     </section>
     <!-- /menu -->
 
     <!-- contacts -->
-    <section class="section-outer section-contacts">
-        <div class="section-inner">
-            section-contacts
+    <section class="contact-us">
+        <div class="container">
+            <div class="contact-us__wrapper">
+                <div class="contact-us__contacts">
+                    <h3 class="contact-us__title">С нами можно<br>связаться</h3>
+                    <div class="contact-us__adress">м.Коньково
+                        ул.профсоюзная 126к2</div>
+                    <div class="contact-us__phone">+7 (929) 635 43 21</div>
+                    <div class="contact-us__inst">juice.msk</div>
+                </div>
+                <form action="" method="post" class="contact-form">
+                    <h3 class="contact-form__title">Оставь заявку<br>
+                        на прямую доставку</h3>
+                    <input type="text" name="name" id="" placeholder="Ваше имя" class="contact-form__input">
+                    <input type="email" name="email" id="" placeholder="Ваш E-mail" class="contact-form__input">
+                    <input type="phone" name="phone" id="" placeholder="Ваш телефон" class="contact-form__input">
+                    <input type="submit" value="Заказать" class="order-button">
+                </form>
+            </div>
         </div>
     </section>
     <!-- /contacts -->
 
-    <section class="section-outer section-about">
-        <div class="section-inner">
-            section-header
+    <!-- about -->
+    <section class="about">
+        <div class="container">
+            <h3 class="block-title">Работа</h3>
+            <div class="block-subtitle">Как мы работаем</div>
+            <p class="block-desc">Мы хотим чтоб работать с нами было удобно и приятно</p>
+            <div class="about__wrapper">
+                <div class="about__item">
+                    <div class="about__number">1</div>
+                    <div class="about__info">
+                        <img src="img/buy.png" alt="" class="about__img">
+                        <div class="about__title">Закупаем</div>
+                        <div class="about__text">Собственноручно выбираем лучшие овощи и фрукты</div>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <div class="about__number">2</div>
+                    
+                    <div class="about__info">
+                        <img src="img/box.png" alt="" class="about__img">
+                        <div class="about__title">Храним</div>
+                        <div class="about__text">Cобственный микроклимат для каждых продуктов</div>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <div class="about__number">3</div>
+                    <div class="about__info">
+                        <img src="img/cook.png" alt="" class="about__img">
+                        <div class="about__title">Готовим</div>
+                        <div class="about__text">По вашему желанию заказ будет приготовлен при вас</div>
+                    </div>
+                </div>
+                <div class="about__item">
+                    <div class="about__number">4</div>
+                    <div class="about__info">
+                        <img src="img/deveil.png" alt="" class="about__img">
+                        <div class="about__title">Доставляем</div>
+                        <div class="about__text">Наши курьеры доставят заказ в любую точку города</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section-outer section-faq">
-        <div class="section-inner">
-            section-faq
+    <!-- /about -->
+
+    <section class="faq">
+        <div class="container">
+            <div class="section-inner">
+                <h3 class="block-title">FAQ</h3>
+                <div class="block-subtitle">Часто задаваемые вопросы</div>
+                <p class="block-desc">Улыбка клиента лучшая награда для нас</p>
+            </div>
         </div>
     </section>
 
     <footer class="section-outer section-footer">
-        <div class="section-inner">
-            section-header
-        </div>
+
     </footer>
 </body>
 
