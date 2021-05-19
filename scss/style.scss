@@ -46,20 +46,6 @@ h1, h2, h3, h4, h5, h6 {
         padding: 40px 0 120px 0;
     }
 
-    &__contacts {
-        display: flex;
-        flex-shrink: 1;
-    }
-
-    &__phone {
-        margin-right: 20px;
-    }
-
-    &__inst {
-        max-width: 17px;
-        max-height: 17px;
-    }
-
     &__wrapper {
         display: flex;
         padding-bottom: 214px;
@@ -100,6 +86,21 @@ h1, h2, h3, h4, h5, h6 {
 
 .logo {
     flex-grow: 1;
+}
+
+.contacts {
+    display: flex;
+    flex-shrink: 1;
+}
+
+.phone {
+    margin-right: 20px;
+}
+
+.insta {
+    display: flex;
+    max-width: 17px;
+    max-height: 17px;
 }
 
 .menu {
@@ -277,6 +278,7 @@ h1, h2, h3, h4, h5, h6 {
         }
         &:hover,
         &:focus {
+            transition: 0.3s ease-in-out;
             color: $wight-txt;
             background-color: $main-color;
             box-shadow: 0px 4px 4px $main-color;
@@ -629,3 +631,101 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 // /about
+
+// faq
+
+.faq {
+    padding-bottom: 70px;
+
+    &__menu {
+        display: flex;
+        justify-content: space-between;
+        margin: 40px auto;
+        max-width: 370px;
+        width: 100%;
+    }
+
+    &__item {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: $main-color;
+        cursor: pointer;
+        
+        &:hover {
+            color: #000;
+        }
+    }
+
+    &__wrapper-open {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        padding: 34px 30px;
+        background-color: #F5F5F5;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    &__title {
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 19px;
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 14px;
+        color: #6B6B6B;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 22px 34px 22px 20px;
+        box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.05);
+
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__arrow {
+        align-self: center;
+    }
+}
+
+// /faq
+
+// footer
+
+.footer {
+
+    &__inner {
+        display: flex;
+        margin-bottom: 12px;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        margin-left: 30%;
+    }
+
+    &__under {
+        height: 100px;
+        background-color: #000;
+    }
+
+    .insta {
+        margin-right: 5px;
+    }
+    
+}
+
+.insta-wrapper {
+    display: flex;
+}
+
+
+// /footer
