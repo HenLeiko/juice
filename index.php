@@ -140,6 +140,8 @@
             <p class="block-desc">Вы можете выбрать готовый продукт или создать свой</p>
 
             <div class="menu-cards">
+
+                <?php include('getcards.php') ?>
                 <div class="menu-cards__item">
                     <img src="img/Green_Juice_Bottle_I16_2k 1.png" alt="АХАХАХ ещё сок" class="menu-cards__img">
                     <div class="menu-cards__desc-wrapper">
