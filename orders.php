@@ -21,9 +21,9 @@
                     <img src="img/logo.png" alt="Juice-logo">
                 </div>
                 <nav class="menu">
-                    <a href="" class="menu__item">Главная</a>
-                    <a href="" class="menu__item">Каталог</a>
-                    <a href="" class="menu__item">Корзина</a>
+                <a href="index.php" class="menu__item">Главная</a>
+                    <a href="categories.php" class="menu__item">Каталог</a>
+                    <a href="cart.php" class="menu__item">Корзина</a>
                 </nav>
 
                 <div class="contacts">

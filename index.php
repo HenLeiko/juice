@@ -1,3 +1,22 @@
+<?php
+session_start();
+include("bd.php");
+if (isset($_GET['id'])) {
+
+    if ($_SESSION['goods'] == "") {
+         $_SESSION['goods'] = array();
+    }
+    $id = $_GET['id'];
+    $result = mysqli_query($db,"SELECT * FROM products WHERE id='$id'");
+    $myrow = mysqli_fetch_array($result);
+    $_SESSION['goods'][$id] = $id;
+    
+}
+echo '<pre>';
+    print_r($_SESSION['goods']);
+echo '</pre>';
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -21,9 +40,9 @@
                     <img src="img/logo.png" alt="Juice-logo">
                 </div>
                 <nav class="menu">
-                    <a href="" class="menu__item">Главная</a>
-                    <a href="" class="menu__item">Каталог</a>
-                    <a href="" class="menu__item">Корзина</a>
+                    <a href="index.php" class="menu__item">Главная</a>
+                    <a href="categories.php" class="menu__item">Каталог</a>
+                    <a href="cart.php" class="menu__item">Корзина</a>
                 </nav>
 
                 <div class="contacts">
@@ -141,7 +160,8 @@
 
             <div class="menu-cards">
 
-                <?php include('getcards.php') ?>
+                <?php require 'getcards.php'; ?>
+                
                 <div class="menu-cards__item">
                     <img src="img/Green_Juice_Bottle_I16_2k 1.png" alt="АХАХАХ ещё сок" class="menu-cards__img">
                     <div class="menu-cards__desc-wrapper">
@@ -149,7 +169,7 @@
                         <div class="menu-cards__subtitle">Яблоко</div>
                         <div class="menu-cards__info-wrapper">
                             <div class="menu-cards__price">250Р</div>
-                            <img src="img/Кнопка +.png" alt="Добавить" class="menu-cards__add-button">
+                            <a href="?id=1"><img src="img/Кнопка +.png" alt="Добавить" class="menu-cards__add-button"></a>
                         </div>
                     </div>
                 </div>
@@ -274,33 +294,51 @@
                 <div class="faq__item">Доставка</div>
                 <div class="faq__item">Возврат</div>
             </div>
-            <div class="faq__wrapper-open">
+            <!-- <div class="faq__wrapper-open">
                 <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
                 <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat fringilla velit vestibulum euismod justo magna amet.</p>
+            </div> -->
+            <div class="faq__wrapper">
+                <div class="faq__cont">
+                    <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
+                    <img src="img/open-block.png" alt="" class="faq__arrow">
+                </div>
+                <div class="faq__info">
+                    <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat fringilla velit vestibulum euismod justo magna amet.</p>
+                </div>
             </div>
             <div class="faq__wrapper">
-                <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
-                <img src="img/open-block.png" alt="" class="faq__arrow">
-            </div>
-            <div class="faq__wrapper">
-                <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
-                <img src="img/open-block.png" alt="" class="faq__arrow">
-            </div>
-            <div class="faq__wrapper">
-                <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
-                <img src="img/open-block.png" alt="" class="faq__arrow">
-            </div>
-            <div class="faq__wrapper">
-                <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
-                <img src="img/open-block.png" alt="" class="faq__arrow">
-            </div>
-            <div class="faq__wrapper">
-                <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
-                <img src="img/open-block.png" alt="" class="faq__arrow">
-            </div>
-            <div class="faq__wrapper">
-                <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
-                <img src="img/open-block.png" alt="" class="faq__arrow"> 
+                <div class="faq__cont">
+                    <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
+                    <img src="img/open-block.png" alt="" class="faq__arrow">
+                </div>
+                <div class="faq__info">
+                    <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat fringilla velit vestibulum euismod justo magna amet.</p>
+                </div>
+            </div><div class="faq__wrapper">
+                <div class="faq__cont">
+                    <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
+                    <img src="img/open-block.png" alt="" class="faq__arrow">
+                </div>
+                <div class="faq__info">
+                    <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat fringilla velit vestibulum euismod justo magna amet.</p>
+                </div>
+            </div><div class="faq__wrapper">
+                <div class="faq__cont">
+                    <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
+                    <img src="img/open-block.png" alt="" class="faq__arrow">
+                </div>
+                <div class="faq__info">
+                    <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat fringilla velit vestibulum euismod justo magna amet.</p>
+                </div>
+            </div><div class="faq__wrapper">
+                <div class="faq__cont">
+                    <h4 class="faq__title">Lorem ipsum dolor sit amet</h4>
+                    <img src="img/open-block.png" alt="" class="faq__arrow">
+                </div>
+                <div class="faq__info">
+                    <p class="faq__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat fringilla velit vestibulum euismod justo magna amet.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -324,6 +362,7 @@
         </div>
         <div class="footer__under"></div>
     </footer>
+    <script src="/js/script.js"></script>
 </body>
 
 </html>

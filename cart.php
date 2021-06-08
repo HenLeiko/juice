@@ -1,3 +1,9 @@
+<?php
+session_start();
+include("bd.php");
+$_SESSION['sum'] = 0;
+?>
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -21,9 +27,9 @@
                     <img src="img/logo.png" alt="Juice-logo">
                 </div>
                 <nav class="menu">
-                    <a href="" class="menu__item">Главная</a>
-                    <a href="" class="menu__item">Каталог</a>
-                    <a href="" class="menu__item">Корзина</a>
+                <a href="index.php" class="menu__item">Главная</a>
+                    <a href="categories.php" class="menu__item">Каталог</a>
+                    <a href="cart.php" class="menu__item">Корзина</a>
                 </nav>
 
                 <div class="contacts">
@@ -41,30 +47,24 @@
                     <h1 class="cart-order__title">Корзина</h1>
                     <div class="cart-order__inner">
                         <div class="cart-order__cards">
-                            <div class="cart-order__item">
-                                <img src="img/sokkkkkk.png" alt="" class="cart-order__img">
-                                <div class="cart-order__desc">
-                                    <div class="cart-order__item-title">Апельсиновый сок</div>
-                                    <div class="cart-order__price">500₽</div>
-                                    <div class="cart-order__add">Количество < <span>1</span> ></div>
-                                </div>
-                            </div>
-                            <div class="cart-order__item">
-                                <img src="img/sokkkkkk.png" alt="" class="cart-order__img">
-                                <div class="cart-order__desc">
-                                    <div class="cart-order__item-title">Апельсиновый сок</div>
-                                    <div class="cart-order__price">500₽</div>
-                                    <div class="cart-order__add">Количество < <span>1</span> ></div>
-                                </div>
-                            </div>
-                            <div class="cart-order__item">
-                                <img src="img/sokkkkkk.png" alt="" class="cart-order__img">
-                                <div class="cart-order__desc">
-                                    <div class="cart-order__item-title">Апельсиновый сок</div>
-                                    <div class="cart-order__price">500₽</div>
-                                    <div class="cart-order__add">Количество < <span>1</span> ></div>
-                                </div>
-                            </div>
+                            <?php 
+                            if (isset($_SESSION['goods'])) {
+                                foreach($_SESSION['goods'] as $id => $val) {
+                                    $result = mysqli_query($db,"SELECT * FROM products WHERE id='$id'");
+                                    $row = mysqli_fetch_array($result);
+                                    $_SESSION['sum'] += $row['price'];
+                                    echo '<div class="cart-order__item">';
+                                    echo '<img src="img/sokkkkkk.png" alt="" class="cart-order__img">';
+                                    echo '<div class="cart-order__desc">';
+                                    echo '<div class="cart-order__item-title">'.$row['name'].'</div>';
+                                    echo '<div class="cart-order__price">'.$row['price'].'</div>';
+                                    echo '<div class="cart-order__add">Количество < <span>'.$val.'</span> ></div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                }
+                            }
+                            ?>
+
                         </div>
                     </div>
                     <div class="cart-order__sum">
@@ -74,20 +74,20 @@
                             <div class="cart-order__sum-item">Итого</div>
                         </div>
                         <div class="cart-order__sum-artic">
-                            <div class="cart-order__artic-item">700₽</div>
-                            <div class="cart-order__artic-item">20%</div>
-                            <div class="cart-order__artic-item">300₽</div>
+                            <div class="cart-order__artic-item"><?=$_SESSION['sum']?>₽</div>
+                            <div class="cart-order__artic-item">0%</div>
+                            <div class="cart-order__artic-item"><?=$_SESSION['sum']?>₽</div>
                         </div>
                     </div>
                 </div>
 
-                <div class="payment">
+                <form action="makeorder.php" method="post" class="payment">
                     <h2 class="payment__title">Оплата</h2>
                     <input type="text" placeholder="Имя" name="name" id="name" class="payment__input">
                     <input type="phone" placeholder="Номер телефона" name="phone" id="phone" class="payment__input">
                     <input type="text" placeholder="Адрес доставки" name="adres" id="adres" class="payment__input">
                     <input type="submit" value="Перейти к оплате" class="order-button">
-                </div> 
+                </form> 
             </div>
         </div>
     </main>

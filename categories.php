@@ -1,3 +1,15 @@
+<?php
+session_start();
+if (isset($_GET['id'])) {
+
+    if ($_SESSION['goods'] == "") {
+         $_SESSION['goods'] = array();
+    }
+    $id = $_GET['id'];
+    $_SESSION['goods'][$id] = '1';
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -21,9 +33,9 @@
                     <img src="img/logo.png" alt="Juice-logo">
                 </div>
                 <nav class="menu">
-                    <a href="" class="menu__item">Главная</a>
-                    <a href="" class="menu__item">Каталог</a>
-                    <a href="" class="menu__item">Корзина</a>
+                    <a href="index.php" class="menu__item">Главная</a>
+                    <a href="categories.php" class="menu__item">Каталог</a>
+                    <a href="cart.php" class="menu__item">Корзина</a>
                 </nav>
 
                 <div class="contacts">
@@ -53,7 +65,19 @@
                 <div class="categories__list">
                     <input type="search" placeholder="Поиск" name="search" id="search" class="categories__search">
                     <div class="menu-cards">
+                        <?php require 'getcards.php'; ?>
                         <div class="menu-cards__item">
+                            <img src="img/Green_Juice_Bottle_I16_2k 1.png" alt="АХАХАХ ещё сок" class="menu-cards__img">
+                            <div class="menu-cards__desc-wrapper">
+                                <div class="menu-cards__title">Шейк</div>
+                                <div class="menu-cards__subtitle">Яблоко</div>
+                                <div class="menu-cards__info-wrapper">
+                                    <div class="menu-cards__price">250Р</div>
+                                    <img src="img/Кнопка +.png" alt="Добавить" class="menu-cards__add-button">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="menu-cards__item">
                             <img src="img/Green_Juice_Bottle_I16_2k 1.png" alt="АХАХАХ ещё сок" class="menu-cards__img">
                             <div class="menu-cards__desc-wrapper">
                                 <div class="menu-cards__title">Шейк</div>
@@ -162,7 +186,7 @@
                                     <img src="img/Кнопка +.png" alt="Добавить" class="menu-cards__add-button">
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 
